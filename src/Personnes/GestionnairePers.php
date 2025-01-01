@@ -1,10 +1,6 @@
 <?php
 
-namespace src\src\Personnes;
-
-use PDO;
-use PDOException;
-use src\src\Configuration\database;
+use src\Personnes\Personne;
 
 require_once "../Configuration/database.php";
 
@@ -37,24 +33,29 @@ class GestionnairePers
             return false;
         }
     }
-    public function enregistrement($nom, $prenom, $email, $mdp ) {
+    public function enregistrement(Personne $p): bool {
         try {
-            $sql = "INSERT INTO PERSONNE (Nom, Prenom, Email, Mdp) VALUES(:nom, :prenom, :email, :mdp);";
+            $sql = "INSERT INTO PERSONNE (Nom, Prenom, Email, Mdp, Age, Region) VALUES (:nom, :prenom, :email, :mdp, :age, :region)";
             $req = $this->pdo->prepare($sql);
-            $hashedPassword = password_hash($mdp, PASSWORD_DEFAULT);
-            $req->bindParam(":nom", $nom);
-            $req->bindParam(":prenom", $prenom);
-            $req->bindParam(":email", $email);
-            $req->bindParam(":mdp", $hashedPassword);
 
-            if ($req->execute()){
-                return true;
-            }
-            return false;
-        }catch (PDOException $e){
-            echo $e->getMessage();
+            // Hash du mot de passe
+            $hashedPassword = password_hash($p->getMotdepasse(), PASSWORD_DEFAULT);
+
+            // Liaison des paramètres
+            $req->bindValue(":nom", $p->getNom(), PDO::PARAM_STR);
+            $req->bindValue(":prenom", $p->getPrenom(), PDO::PARAM_STR);
+            $req->bindValue(":email", $p->getEmail(), PDO::PARAM_STR);
+            $req->bindValue(":mdp", $hashedPassword, PDO::PARAM_STR);
+            $req->bindValue(":age", $p->getAge(), PDO::PARAM_INT);
+            $req->bindValue(":region", $p->getRegion(), PDO::PARAM_STR);
+
+            // Exécution de la requête
+            return $req->execute();
+        } catch (PDOException $e) {
+            // Affichage d'un message d'erreur plus précis (ne pas exposer cela en production)
+            error_log("Erreur lors de l'enregistrement d'une personne : " . $e->getMessage());
             return false;
         }
-
     }
+
 }

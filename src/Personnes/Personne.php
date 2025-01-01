@@ -1,6 +1,6 @@
 <?php
 
-namespace src\src\Personnes;
+namespace src\Personnes;
 
 class Personne
 {
@@ -29,24 +29,14 @@ class Personne
         $this->motdepasse = $motdepasse;
         $this->email = $email;
     }
-
-
     public function getPrenom(): string
     {
         return $this->prenom;
     }
-
-    /**
-     * @return mixed
-     */
     public function getMotdepasse()
     {
         return $this->motdepasse;
     }
-
-    /**
-     * @return mixed
-     */
     public function getEmail()
     {
         return $this->email;

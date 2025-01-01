@@ -1,13 +1,11 @@
 <?php
 
-namespace src\src\Configuration;
-use src\Configuration\PDO;
-use src\Configuration\PDOException;
+
 
 class database
 {
     private $pdo;
-    private $lien = "../Configuration/Database.db";
+    private string $lien = "E:\SAE-web-S\src\Configuration\Database.db";
     public function connecter()
     {
         if ($this->pdo == null) {

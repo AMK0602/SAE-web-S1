@@ -1,7 +1,7 @@
 <?php
-require "E:\SAE-web-S\Configuration\database.php";
 
-$db = new Database();
+require "database.php";
+
+$db = new database();
 $pdo = $db->connecter();
-
 
