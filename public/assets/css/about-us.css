@@ -105,7 +105,7 @@
 
 .card-content li::before {
     content: "";
-    background-image: url("assets/images/list-style-objectif.png");
+    background-image: url("../images/list-style-objectif.png");
     background-size: 25px 25px;
     background-repeat: no-repeat;
     display: inline-block;
@@ -148,7 +148,7 @@
 
 .container li::before {
     content: "";
-    background-image: url("assets/images/arrow.png");
+    background-image: url("../images/arrow.png");
     background-size: 25px 25px;
     background-repeat: no-repeat;
     display: inline-block;

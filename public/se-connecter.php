@@ -1,6 +1,5 @@
-<?php require_once('header.php'); ?>
-
-    <!--Se connecter-->
+<?php require_once('../src/view/header.php') ?>
+<!--Se connecter-->
     <div class="se-connecter">
         <div class="container">
             <div class="header">
@@ -41,5 +40,4 @@
     </div>
 
 
-
-<?php require_once ('footer.php') ?>
+<?php require_once('../src/view/footer.php') ?>

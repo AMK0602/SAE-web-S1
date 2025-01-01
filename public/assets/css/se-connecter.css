@@ -1,0 +1,121 @@
+.se-connecter {
+    display: flex;
+    justify-content: center;
+    padding: 5% 0;
+    background: linear-gradient(#E37BA3 0%, rgb(255, 244, 244) 70%, #E37BA3 100%);
+}
+.se-connecter .container {
+    width: 40%;
+    border-radius: 50px;
+    text-align: center;
+    justify-self: center;
+    background: white;
+    padding: 3% 4%;
+}
+.header {
+    display: flex;
+}
+.header button {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+}
+.header .active {
+    background-color: black;
+    color: white;
+}
+.header .inactive {
+    background-color: #e0e0e0;
+    color: #aaa;
+}
+h3 {
+    margin: 5% 0;
+}
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin: 2% 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.social-btn img {
+    width: 6%;
+    margin-right: 2%;
+}
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 4% 0;
+}
+.divider hr {
+    flex: 1;
+    border: none;
+    border-top: 3px solid #999494;
+}
+.divider span {
+    margin: 0 2%;
+    color: #aaa;
+}
+
+.input-group{
+    display: flex;
+    justify-content: space-between;
+}
+.input-group input {
+    width: 50%;
+}
+input[type="email"], input[type="password"] {
+    width: 100%;
+}
+input {
+    padding: 3% 2%;
+    border: 1px solid #ddd;
+    margin-bottom: 3%;
+    border-radius: 20px;
+}
+
+.password-wrapper {
+    position: relative;
+}
+.password-wrapper input[type="password"] {
+    width: calc(100% - 30px);
+}
+.password-wrapper .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+#submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border: none;
+    color: #888;
+    border-radius: 5px;
+}
+
+#submit-btn:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#submit-btn.enabled {
+    opacity: 1;
+    pointer-events: auto;
+    background-color: rgb(90, 230, 90);
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .se-connecter .container {
+        width: 80%;
+    }
+}

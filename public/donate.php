@@ -1,4 +1,4 @@
-<?php require_once('header.php'); ?>
+<?php require_once('../src/view/header.php'); ?>
 
     <div class="donation-form">
         <div class="donation-options">  
@@ -57,4 +57,4 @@
         </div>
     </div>
 
-<?php require_once ('footer.php') ?>
+<?php require_once('../src/view/footer.php') ?>

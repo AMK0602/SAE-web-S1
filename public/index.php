@@ -1,4 +1,6 @@
-<?php include('header.php'); ?>
+<?php
+require  "../src/view/header.php";
+?>
     <!-- BANNER -->
     <section class="banner py-5">
         <div class="container mt-4">
@@ -130,4 +132,4 @@
         </div>
     </section>
 
-<?php require_once ('footer.php') ?>
+<?php require_once('../src/view/footer.php') ?>
