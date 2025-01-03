@@ -1,19 +1,17 @@
 <?php
 require "../src/configuration/database.php";
-
-$totalQuestion = 10;
-$questionsCourante = 1;
 $db = new Database();
 $pdo = $db->connecter();
 $questions = $db->chargerLesQuestions($pdo);
-
+$questionsCourante = 1;
+$totalQuestion = $db->nbQuestion($pdo);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Mon enquête</title>
-<!--    <link rel="stylesheet" href="assets/css/enquete.css">-->
+    <link rel="stylesheet" href="assets/css/enquete.css">
 </head>
 <body>
 
@@ -50,9 +48,6 @@ $questions = $db->chargerLesQuestions($pdo);
                                name="reponses[<?= $question['id_question'] ?>]"
                                value="" readonly required>
 
-                    <?php elseif ($question['type_question'] === 'input'): ?>
-                        <input  name="reponses[<?= $question['id_question'] ?>]" required>
-                    
                     <?php elseif ($question['type_question'] === 'textarea'): ?>
                         <textarea placeholder="champs libre" name="reponses[<?= $question['id_question'] ?>]" required></textarea>
 
@@ -69,13 +64,12 @@ $questions = $db->chargerLesQuestions($pdo);
             <div>
             <?php endforeach; ?>
         </div>
+
+
                 <div class="navigation">
                     <button id="prev-btn" type="button" class="btn">Retour</button>
                     <button id="next-btn" type="button" class="btn">Suivant</button>
                 </div>
     </form>
-    
-    
-    
 </body>
 </html>
