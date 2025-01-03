@@ -1,0 +1,17 @@
+{
+    "name": "asfc/sae",
+    "description": "sae web S1",
+    "autoload": {
+        "psr-4": {
+            "Asfc\\Sae\\": "private/app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohamed Amine 204"
+        }
+    ],
+    "require": {
+      "ext-pdo": "*"
+    }
+}
