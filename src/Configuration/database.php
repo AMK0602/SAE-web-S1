@@ -4,6 +4,7 @@ class database
 {
     private $pdo;
     private string $lien = "E:\SAE-web-S\src\Configuration\Database.db";
+
     public function connecter()
     {
         if ($this->pdo == null) {
@@ -45,8 +46,27 @@ class database
             return [];
         }
     }
-
-
+    public function chargerLesOptions(PDO $pdo , $idQuestion)
+    {
+        try {
+            $query = $pdo->prepare("SELECT * FROM Options WHERE id_question = :id_question");
+            $query->bindValue(':id_question', $idQuestion, PDO::PARAM_INT);
+            $query->execute();
+            $options = $query->fetchAll();
+        } catch (PDOException $e) {
+            echo("Error questions: " . $e->getMessage());
+        }
+        return $options;
+    }
+    public function nbQuestion(PDO $pdo){
+        try {
+            $stmt = $pdo->prepare("SELECT COUNT(*) FROM Questions");
+            $stmt->execute();
+            return $stmt->fetchColumn();
+        } catch (PDOException $e) {
+            echo "Erreur lors du chargement du nombre questions : " . $e->getMessage();
+        }
+    }
 }
 
 
