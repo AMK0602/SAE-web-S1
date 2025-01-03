@@ -13,7 +13,7 @@ $questions = $db->chargerLesQuestions($pdo);
 <head>
     <meta charset="UTF-8">
     <title>Mon enquête</title>
-    <link rel="stylesheet" href="assets/css/enquete.css">
+<!--    <link rel="stylesheet" href="assets/css/enquete.css">-->
 </head>
 <body>
 
@@ -28,20 +28,54 @@ $questions = $db->chargerLesQuestions($pdo);
     <form class="form" method="POST" action="">
         <div id="questions-wrapper">
             <?php foreach ($questions as $index => $question): ?>
-            <div class="question-slide <?= $index === 0 ? 'visible' : '' ?>" id="question-<?= $index ?>" >
-                <p class="question-num">
-                    Question <?= $index  ?>
-                </p>
-                <p class="question">
-                    <?= htmlspecialchars($question['texte_question'])?>
-                </p>
-
+            <div class="question-slide <?= $index === 1 ? 'visible' : '' ?>" id="question-<?= $index ?>" >
+                <p class="question-num">Question <?= $index  ?></p>
+                <p class="question"><?= htmlspecialchars($question['texte_question'])?></p>
                 <div class="div-reponse">
+                    <?php if ($question['type_question'] === 'button'): ?>
+                        <?php
+                        $options = $db->chargerLesOptions($pdo , $question['id_question']);
+                        ?>
+                        <?php foreach ($options as $option): ?>
+                            <button class="btn-select" type="button"
+                                    onclick="selectOption(this)"
+                                    data-target="input-<?= $question['id_question'] ?>"
+                                    value="<?= $option['option_text'] ?>">
+
+                                <?= htmlspecialchars($option['option_text']) ?>
+                            </button>
+                        <?php endforeach; ?>
+                        <input type="hidden"
+                               id="input-<?= $question['id_question'] ?>"
+                               name="reponses[<?= $question['id_question'] ?>]"
+                               value="" readonly required>
+
+                    <?php elseif ($question['type_question'] === 'input'): ?>
+                        <input  name="reponses[<?= $question['id_question'] ?>]" required>
                     
+                    <?php elseif ($question['type_question'] === 'textarea'): ?>
+                        <textarea placeholder="champs libre" name="reponses[<?= $question['id_question'] ?>]" required></textarea>
+
+                    <?php elseif ($question['type_question'] === 'select'): ?>
+                        <?php $options = $db->chargerLesOptions($pdo , $question['id_question']);
+                        ?>
+                        <select name="reponses[<?= $question['id_question'] ?>]" required>
+                            <?php foreach ($options as $option): ?>
+                                <option  value="<?= htmlspecialchars($option['option_text']) ?>"><?= htmlspecialchars($option['option_text']) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    <?php endif; ?>
                 </div>
-                <div>
+            <div>
             <?php endforeach; ?>
         </div>
+                <div class="navigation">
+                    <button id="prev-btn" type="button" class="btn">Retour</button>
+                    <button id="next-btn" type="button" class="btn">Suivant</button>
+                </div>
     </form>
+    
+    
+    
 </body>
 </html>
