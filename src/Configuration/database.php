@@ -17,7 +17,6 @@ class database
         }
         return $this->pdo;
     }
-
     public function chargerLesQuestions(PDO $pdo)
     {
         try {
@@ -58,15 +57,26 @@ class database
         }
         return $options;
     }
-    public function nbQuestion(PDO $pdo){
+
+    public function chargerReponses(PDO $pdo , $idQuestion)
+    {
         try {
-            $stmt = $pdo->prepare("SELECT COUNT(*) FROM Questions");
-            $stmt->execute();
-            return $stmt->fetchColumn();
+            $query = $pdo->prepare("SELECT r.Reponse, COUNT(*) as count  FROM Reponses r 
+                                      JOIN Questions q ON r.Id_Question = q.Id_Question
+    WHERE q.Id_Question = :id_question
+    GROUP BY r.Reponse");
+            $query->bindValue(':id_question', $idQuestion, PDO::PARAM_INT);
+            $query->execute();
+
+            $reponse = $query->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
-            echo "Erreur lors du chargement du nombre questions : " . $e->getMessage();
+            echo("Error questions: " . $e->getMessage());
         }
+        return $reponse;
     }
+
+
+
 }
 
 

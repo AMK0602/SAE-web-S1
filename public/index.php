@@ -10,18 +10,16 @@ function handleRequest (array $chemin) : void  {
         http_response_code(404);
     }
 }
-//
 
 $routes = [
-    'index' => '../index.php',
+    'index' => './index.php',
     'connect_user' => '../src/Personnes/connexion.php',
     'register_user' => '../src/Personnes/inscription.php',
     'connect_admin' => '../src/Admin/connexionAdmin.php',
-    'submit_enquete' => '../src/enquete/submit_form.php',
-//    'dashboard' => '../src/php/dashboard.php',
+    'gestionnaire_enquete' => '../src/Enquete/GestionnaireEnquete.php',
+    'dashboard' => './dashboard.php',
 ];
 handleRequest($routes);
-
 require  "../src/view/header.php";
 ?>
     <!-- BANNER -->

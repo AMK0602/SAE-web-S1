@@ -4,7 +4,7 @@ $db = new Database();
 $pdo = $db->connecter();
 $questions = $db->chargerLesQuestions($pdo);
 $questionsCourante = 1;
-$totalQuestion = $db->nbQuestion($pdo);
+$totalQuestion = 1;
 
 ?>
 <!DOCTYPE html>
