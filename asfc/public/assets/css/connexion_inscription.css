@@ -1,0 +1,19 @@
+
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+.form-container h2 {
+    margin-bottom: 20px;
+}
+.nav-tabs .nav-link {
+    color: #495057;
+}
+.nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #E37BA3FF;
+    border-color: #000000;
+}
