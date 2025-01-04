@@ -6,24 +6,24 @@ INSERT INTO options (id_option, id_question, option_text) VALUES (4, 1, "41-60 a
 INSERT INTO options (id_option, id_question, option_text) VALUES (5, 1, "Plus de 60 ans");
 
 -- Q2
-INSERT INTO options (id_option, id_question, option_text) VALUES (6, 3, "Auvergne-Rhône-Alpes");
-INSERT INTO options (id_option, id_question, option_text) VALUES (7, 3, "Bourgogne-Franche-Comté");
-INSERT INTO options (id_option, id_question, option_text) VALUES (8, 3, "Bretagne");
-INSERT INTO options (id_option, id_question, option_text) VALUES (9, 3, "Centre-Val de Loire");
-INSERT INTO options (id_option, id_question, option_text) VALUES (10, 3, "Corse");
-INSERT INTO options (id_option, id_question, option_text) VALUES (11, 3, "Grand Est");
-INSERT INTO options (id_option, id_question, option_text) VALUES (12, 3, "Hauts-de-France");
-INSERT INTO options (id_option, id_question, option_text) VALUES (13, 3, "Île-de-France");
-INSERT INTO options (id_option, id_question, option_text) VALUES (14, 3, "Normandie");
-INSERT INTO options (id_option, id_question, option_text) VALUES (15, 3, "Nouvelle-Aquitaine");
-INSERT INTO options (id_option, id_question, option_text) VALUES (16, 3, "Occitanie");
-INSERT INTO options (id_option, id_question, option_text) VALUES (17, 3, "Pays de la Loire");
-INSERT INTO options (id_option, id_question, option_text) VALUES (18, 3, "Provence-Alpes-Côte d'Azur (PACA)");
-INSERT INTO options (id_option, id_question, option_text) VALUES (19, 3, "Guadeloupe");
-INSERT INTO options (id_option, id_question, option_text) VALUES (20, 3, "Guyane (Guyane française)");
-INSERT INTO options (id_option, id_question, option_text) VALUES (21, 3, "La Réunion");
-INSERT INTO options (id_option, id_question, option_text) VALUES (22, 3, "Martinique");
-INSERT INTO options (id_option, id_question, option_text) VALUES (23, 3, "Mayotte");
+INSERT INTO options (id_option, id_question, option_text) VALUES (6,  2, "Auvergne-Rhône-Alpes");
+INSERT INTO options (id_option, id_question, option_text) VALUES (7,  2, "Bourgogne-Franche-Comté");
+INSERT INTO options (id_option, id_question, option_text) VALUES (8,  2, "Bretagne");
+INSERT INTO options (id_option, id_question, option_text) VALUES (9,  2, "Centre-Val de Loire");
+INSERT INTO options (id_option, id_question, option_text) VALUES (10, 2, "Corse");
+INSERT INTO options (id_option, id_question, option_text) VALUES (11, 2, "Grand Est");
+INSERT INTO options (id_option, id_question, option_text) VALUES (12, 2, "Hauts-de-France");
+INSERT INTO options (id_option, id_question, option_text) VALUES (13, 2, "Île-de-France");
+INSERT INTO options (id_option, id_question, option_text) VALUES (14, 2, "Normandie");
+INSERT INTO options (id_option, id_question, option_text) VALUES (15, 2, "Nouvelle-Aquitaine");
+INSERT INTO options (id_option, id_question, option_text) VALUES (16, 2, "Occitanie");
+INSERT INTO options (id_option, id_question, option_text) VALUES (17, 2, "Pays de la Loire");
+INSERT INTO options (id_option, id_question, option_text) VALUES (18, 2, "Provence-Alpes-Côte d'Azur (PACA)");
+INSERT INTO options (id_option, id_question, option_text) VALUES (19, 2, "Guadeloupe");
+INSERT INTO options (id_option, id_question, option_text) VALUES (20, 2, "Guyane (Guyane française)");
+INSERT INTO options (id_option, id_question, option_text) VALUES (21, 2, "La Réunion");
+INSERT INTO options (id_option, id_question, option_text) VALUES (22, 2, "Martinique");
+INSERT INTO options (id_option, id_question, option_text) VALUES (23, 2, "Mayotte");
 
 INSERT INTO options (id_option, id_question, option_text) VALUES (24, 3, "Dans la famille en permanence");
 INSERT INTO options (id_option, id_question, option_text) VALUES (25, 3, "Dans la famille avec une solution d'accueil ou des activités en journée");

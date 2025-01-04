@@ -1,4 +1,6 @@
 <?php
+
+
 require  "../src/view/header.php";
 ?>
     <!-- BANNER -->

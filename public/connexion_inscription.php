@@ -52,7 +52,7 @@
         </div>
         <div id="signup" class="container tab-pane fade"><br>
             <h4>Formulaire d'inscription</h4>
-            <form class="row g-3 needs-validation" method="post" action="../src/Personnes/inscription.php" >
+            <form class="row g-3 needs-validation" method="post"  action="../src/Personnes/inscription.php" >
                 <div class="row g-3">
 
                     <div class="col-md-6">

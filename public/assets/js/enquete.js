@@ -75,32 +75,30 @@ function updateStepInput() {
         bar.classList.toggle("active", index < stepValue);
     });
 }
-function isCurrentQuestionAnswered() {
-    const currentQuestion = questions[currentIndex];
-    const input = currentQuestion.querySelector('[name^="reponses"]');
-
-    if (input) {
-        const isAnswered =
-            (input.type === 'text' || input.type === 'textarea' || input.type === 'hidden')
-                ? input.value.trim() !== ''
-                : input.tagName === 'SELECT'
-                    ? input.value !== ''
-                    : false;
-
-        // Ajouter ou supprimer une classe pour indiquer un problème
-        if (!isAnswered) {
-            currentQuestion.classList.add('error');
-            setTimeout(() => {
-                currentQuestion.classList.remove('error');
-            }, 2000);
-
-        } else {
-            currentQuestion.classList.remove('error');
-        }
-        return isAnswered;
-    }
-    return false;
-}
+// function isCurrentQuestionAnswered() {
+//     const currentQuestion = questions[currentIndex];
+//     const input = currentQuestion.querySelector('[name^="reponses"]');
+//
+//     if (input) {
+//         const isAnswered =
+//             (input.type === 'text' || input.type === 'textarea' || input.type === 'hidden')
+//                 ? input.value.trim() !== ''
+//                 : input.tagName === 'SELECT'
+//                     ? input.value !== ''
+//                     : false;
+//
+//         // Ajouter ou supprimer une classe pour indiquer un problème
+//         if (!isAnswered) {
+//             currentQuestion.classList.add('error');
+//             setTimeout(() => {
+//                 currentQuestion.classList.remove('error');
+//             }, 2000);
+//
+//         } else {
+//             currentQuestion.classList.remove('error');
+//         }
+//         return isAnswered;
+//     }
+//     return false;
+// }
 showQuestion(currentIndex);
-
-

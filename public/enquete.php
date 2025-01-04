@@ -5,16 +5,16 @@ $pdo = $db->connecter();
 $questions = $db->chargerLesQuestions($pdo);
 $questionsCourante = 1;
 $totalQuestion = $db->nbQuestion($pdo);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Mon enquête</title>
-    <link rel="stylesheet" href="assets/css/enquete.css">
+<!--    <link rel="stylesheet" href="assets/css/enquete.css">-->
 </head>
 <body>
-
 <div class="container">
     <div class="header-form">
         <h1 class="stepbystep"><?= $questionsCourante ?> sur 7</h1>
@@ -22,8 +22,7 @@ $totalQuestion = $db->nbQuestion($pdo);
                 <div class="active"></div>
         </div>
     </div>
-
-    <form class="form" method="POST" action="">
+    <form class="form" method="POST" action="../src/Enquete/GestionnaireEnquete.php">
         <div id="questions-wrapper">
             <?php foreach ($questions as $index => $question): ?>
             <div class="question-slide <?= $index === 1 ? 'visible' : '' ?>" id="question-<?= $index ?>" >
@@ -38,12 +37,12 @@ $totalQuestion = $db->nbQuestion($pdo);
                             <button class="btn-select" type="button"
                                     onclick="selectOption(this)"
                                     data-target="input-<?= $question['id_question'] ?>"
-                                    value="<?= $option['option_text'] ?>">
+                                    value="<?= $option['option_text'] ?> ">
 
                                 <?= htmlspecialchars($option['option_text']) ?>
                             </button>
                         <?php endforeach; ?>
-                        <input type="hidden"
+                        <input type="text"
                                id="input-<?= $question['id_question'] ?>"
                                name="reponses[<?= $question['id_question'] ?>]"
                                value="" readonly required>
@@ -64,12 +63,12 @@ $totalQuestion = $db->nbQuestion($pdo);
             <div>
             <?php endforeach; ?>
         </div>
-
-
                 <div class="navigation">
                     <button id="prev-btn" type="button" class="btn">Retour</button>
                     <button id="next-btn" type="button" class="btn">Suivant</button>
                 </div>
+                <button  type="submit" class="btn">envoie</button>
     </form>
+    <script src="./assets/js/enquete.js"></script>
 </body>
 </html>
