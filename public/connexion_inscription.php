@@ -29,7 +29,7 @@
 
     <div class="tab-content">
         <div id="signin" class="container tab-pane active"><br>
-            <form method="post" action="../src/Personnes/connexion.php" class="row g-3 needs-validation">
+            <form method="post" action="index.php?action=connect_user" class="row g-3 needs-validation">
                 <div class="col-md-4 ">
                     <label for="signin-email" class="form-label">email</label>
                     <input type="text" class="form-control" id="signin-email" placeholder="Votre adresse email..."
@@ -52,7 +52,7 @@
         </div>
         <div id="signup" class="container tab-pane fade"><br>
             <h4>Formulaire d'inscription</h4>
-            <form class="row g-3 needs-validation" method="post"  action="../src/Personnes/inscription.php" >
+            <form class="row g-3 needs-validation" method="post"  action="index.php?action=register_user" >
                 <div class="row g-3">
 
                     <div class="col-md-6">

@@ -1,5 +1,26 @@
 <?php
+function handleRequest (array $chemin) : void  {
 
+    $action = filter_var($_GET["action"] ?? $_POST["action"] ?? null  );
+
+    if ($action && isset($chemin[$action])) {
+        require $chemin[$action];
+        exit();
+    }else{
+        http_response_code(404);
+    }
+}
+//
+
+$routes = [
+    'index' => '../index.php',
+    'connect_user' => '../src/Personnes/connexion.php',
+    'register_user' => '../src/Personnes/inscription.php',
+    'connect_admin' => '../src/Admin/connexionAdmin.php',
+    'submit_enquete' => '../src/enquete/submit_form.php',
+//    'dashboard' => '../src/php/dashboard.php',
+];
+handleRequest($routes);
 
 require  "../src/view/header.php";
 ?>

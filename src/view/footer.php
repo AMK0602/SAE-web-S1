@@ -24,9 +24,10 @@
             <div class="col-md-3 col-6 py-2">
                 <h5 class="text-center">Liens utiles</h5>
                 <div class="row">
-                    <p class="text-center"><a href="./se-connecter.php">Espace adhérent</a></p>
+                    <p class="text-center"><a href="index.php?action=connect_user">Espace adhérent</a></p>
                     <p class="text-center"><a href="./donate.php">Faire un don</a></p>
-                    <p class="text-center">FAQ</p>
+                    <p class="text-center"> <a href="./enquete.php">FAQ</a></p>
+                    <p class="text-center"> <a href="./admin.php">Admin</a></p>
                     <p class="text-center">Plan du site</p>
                 </div>
             </div>
