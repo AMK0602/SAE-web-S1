@@ -4,10 +4,33 @@ namespace Asfc\Sae;
 
 class GestionFormulaire
 {
-    public function __construct(private IDBRepository $repository) { }
+    public function __construct(private IDBRepository $repository)
+    {
+    }
 
-    public function register(string $prenom,string $nom,int $age,string $region,string $email, string $password, string $repeat) : bool {
+    public function enregistrerReponse(
+        int $region,
+        int $situationLogement,
+        int $orientationCdaph,
+        int $satisfactionLieuDeVie,
+        int $activite,
+        int $qualiteDeVie,
+        int $besoinSoutien,
+        int $idUser
+    ): bool {
+        $formulaire = new Formulaire(
+            $region,
+            $situationLogement,
+            $orientationCdaph,
+            $satisfactionLieuDeVie,
+            $activite,
+            $qualiteDeVie,
+            $besoinSoutien,
+            $idUser
+        );
 
-        return false;
-    };
+        return $this->repository->saveFormulaire($formulaire);
+    }
+
+
 }
