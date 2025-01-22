@@ -1,6 +1,5 @@
 let currentIndex = 0;
 let slideInterval;
-
 function slidesVisible() {
     return window.innerWidth < 768 ? 1 : 3;
 }
@@ -37,13 +36,32 @@ function prevSlide() {
     resetInterval();
 }
 
-document.getElementById("btn-don2").addEventListener("click", function() {
-    window.location.href = "donate.php";
-});
-document.getElementById("btn-don1").addEventListener("click", function() {
-    window.location.href = "connexion_inscription.php";
-});
 window.addEventListener('resize', showSlides);
 
 showSlides();
 slideInterval = setInterval(nextSlide, 3000);
+document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".actu-carousel");
+    const numSlides = 6;
+
+    const commonTitle = "Wow!";
+    const commonText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque blandit eu dui nec porta. Nullam semper et nulla pulvinar mollis. Aenean feugiat sed elit sit amet pellentesque.`;
+
+    for (let i = 0; i < numSlides; i++) {
+        const slide = document.createElement("div");
+        slide.classList.add("slide");
+
+        slide.innerHTML = `
+            <div class="card rounded">
+                <img src="assets/images/actu-image.png" class="card-img-top" alt="Actu Image">
+                <div class="card-body">
+                    <h5 class="card-title">${commonTitle}</h5>
+                    <p class="card-text">${commonText}</p>
+                    <a href="#" class="link-underline-info link-opacity-75">Lire la suite →</a>
+                </div>
+            </div>
+        `;
+
+        carousel.appendChild(slide);
+    }
+});
