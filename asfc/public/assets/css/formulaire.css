@@ -1,0 +1,85 @@
+/* Section principale */
+.formulaire {
+    background-color: #ffe4f0; /* Fond rose clair */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Panneau encadré */
+.form-panel {
+    background-color: #fff;
+    border: 3px solid #d63384; /* Bordure rose */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre */
+    padding: 2rem;
+    padding-bottom: 0;
+    max-width: 600px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+/* Titre */
+.form-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d63384;
+    margin-bottom: 1.5rem;
+}
+
+/* Groupe de champs */
+.form-group {
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+/* Labels */
+.form label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Champs de formulaire */
+.form select,
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    border: 2px solid #d63384;
+    border-radius: 8px;
+    padding: 0.6rem;
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 4%;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="radio"] {
+    accent-color: #d63384;
+    margin-bottom: 4%;
+
+}
+
+/* Bouton de soumission */
+.btn-submit {
+    background-color: #d63384;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.btn-submit:hover {
+    background-color: #c2185b;
+}
