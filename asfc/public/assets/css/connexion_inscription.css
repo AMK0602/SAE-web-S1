@@ -1,19 +1,105 @@
-
+body {
+    background: linear-gradient(180deg, rgb(223, 101, 148) 0%, #f3d1d9 100%);
+}
 .form-container {
     max-width: 500px;
     margin: 50px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    animation: fadeIn 0.5s ease;
 }
+
 .form-container h2 {
     margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #ddd;
 }
 .nav-tabs .nav-link {
     color: #495057;
+    font-weight: 500;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 8px 8px 0 0;
+}
+.nav-tabs .nav-link:hover {
+    color: #E37BA3FF;
 }
 .nav-tabs .nav-link.active {
     color: #fff;
     background-color: #E37BA3FF;
-    border-color: #000000;
+    border-color: #E37BA3FF #E37BA3FF transparent;
 }
+
+.tab-content {
+    margin-top: 20px;
+}
+
+.form-container .form-label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+.form-container .form-control {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+.form-container .form-control:focus {
+    border-color: #E37BA3FF;
+    box-shadow: 0 0 4px rgba(227, 123, 163, 0.5);
+}
+
+/* Boutons */
+.form-container .btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+.form-container .btn-primary {
+    background-color: #E37BA3FF;
+    border-color: #E37BA3FF;
+}
+.form-container .btn-primary:hover {
+    background-color: #c9648c;
+    border-color: #c9648c;
+}
+
+/* Liens */
+.form-container a {
+    color: #E37BA3FF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.form-container a:hover {
+    color: #c9648c;
+}
+
+.was-validated .form-control:invalid {
+    border-color: #dc3545;
+}
+.was-validated .form-control:valid {
+    border-color: #198754;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

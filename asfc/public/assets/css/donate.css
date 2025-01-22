@@ -1,54 +1,60 @@
+/* Donation Form */
 .donation-form {
     display: flex;
     justify-content: center;
-    padding: 10% 0 5% 0;
-    background: linear-gradient(#E37BA3 0%, rgb(255, 244, 244) 70%, #E37BA3 100%);
+    gap: 5%;
+    padding: 5% 0;
+    background: linear-gradient(135deg, #E37BA3, #FFF4F4 50%, #E37BA3);
+    border-radius: 10px;
 }
 
+/* Donation Options */
 .donation-options {
     background: white;
     width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 50px;
-    border: solid 1px black;
-    height: 100%;
-    padding: 2% 0;
+    border-radius: 20px;
+    border: solid 1px #ddd;
+    padding-top: 2%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.donation-options>h4 {
+.donation-options > h4 {
     color: #e74c88;
-    width: 90%;
-    padding: 2% 0;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 10%;
     text-align: center;
     background-color: #F4BCD2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    border: solid 2px black;
-    color: black;
-
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 2px solid #e74c88;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
 
 .don-type {
     display: flex;
     justify-content: space-between;
     width: 90%;
+    margin: 5% 0;
 }
 
 .don-type button {
     background-color: #F4BCD2;
-    border: 1px solid black;
-    color: #e74c88;
+    border: 1px solid #e74c88;
+    border-radius: 30px;
     width: 48%;
-    padding: 2% 0;
-    color: black;
+    padding: 10px 0;
+    font-size: 1em;
+    font-weight: bold;
+    color: #e74c88;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.don-type button.active {
+.don-type button.active,
+.don-type button:hover {
     background-color: #e74c88;
     color: #fff;
 }
@@ -57,39 +63,54 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 3% 0;
+    gap: 10px;
+    margin: 5% 0;
     width: 100%;
 }
 
 .amounts button {
     background-color: #F4BCD2;
     border: 2px solid #e74c88;
-    width: 40%;
     border-radius: 10px;
-    padding: 2%;
-    margin: 1% 0;
+    margin: 2% 0;
+    padding: 10px;
+    width: 40%;
+    font-size: 1em;
+    font-weight: bold;
+    color: #e74c88;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.amounts button:hover {
+    background-color: #e74c88;
+    color: #fff;
+}
+
+.custom-amount {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5%;
+}
+
+.custom-amount input {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 1em;
+    background-color: #FDE2EC;
 }
 
 .custom-amount label {
     font-size: 1.5em;
     color: #666;
-    display: block;
-    border: 1px solid black;
     background-color: #F4BCD2;
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.custom-amount {
-    width: 90%;
-}
-.custom-amount input {
-    width: 100%;
-    padding: 5%;
-    border: 2px solid #ccc;
-    font-size: 1em;
-    background-color: #FDE2EC;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin: 5% 0;
 }
 
 .submit-donation {
@@ -97,49 +118,69 @@
     color: #fff;
     border-radius: 40px;
     border: none;
-    padding: 2% 0;
+    padding: 10px 20px;
+    font-size: 1.1em;
     font-weight: bold;
-    margin-top: 3%;
-    width: 60%;
-    box-shadow: 0 2px 7px #666;
+    width: 70%;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.submit-donation:hover {
+    background-color: #b43b68;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Donation Details */
 .donation-details {
-    margin-top: -3.5%;
-    margin-left: 5%;
     width: 40%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 1%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.donation-details>h2 {
+.donation-details > h2 {
     text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5%;
+    color: #e74c88;
 }
 
 .note {
     font-size: 0.85em;
     color: #666;
     margin: 3% 7%;
-}
-
-.donation-details form {
-    border: 1px black solid;
-    background-color: white;
-    border-radius: 40px;
-    display: flex;
-    justify-content: center;
-}
-
-.personal-info, .address-info {
-    margin-top: 2%;
     text-align: center;
 }
 
-.personal-info h3, .address-info h3 {
+.donation-details form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    background-color: white;
+}
+
+.personal-info,
+.address-info {
+    width: 45%;
+}
+
+.personal-info h3,
+.address-info h3 {
     font-size: 1.1em;
     color: #e74c88;
     margin-bottom: 10px;
 }
 
-.donation-details input[type="text"], input[type="email"], input[type="tel"], select {
+.donation-details input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
@@ -148,30 +189,47 @@
     font-size: 1em;
 }
 
-.civilite-options label {
-    margin-right: 15px;
-    font-size: 0.9em;
+.civilite-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
 }
 
-.civilite-options input {
-    margin-right: 5px;
+.civilite-options label {
+    font-size: 0.9em;
 }
 
 .note input {
     margin-right: 5px;
 }
 
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 992px) {
+    .donation-options {
+        margin-bottom: 5%;
+    }
+    .donation-options > h4,.don-type,.amounts,.amounts button,.custom-amount,.submit-donation   {
+        margin-bottom: 0.1%;
+    }
+    .custom-amount {
+        margin-left: auto;
+    }
+    .submit-donation {
+        margin-bottom: 5%;
+    }
     .donation-form {
         flex-direction: column;
         align-items: center;
+        padding: 5%;
     }
-    .donation-options {
-        width: 80%;
-    }
+
+    .donation-options,
     .donation-details {
-        width: 80%;
-        margin-top: 5%;
-        margin-left: 0;
+        width: 90%;
+    }
+
+    .personal-info,
+    .address-info {
+        width: 100%;
     }
 }
