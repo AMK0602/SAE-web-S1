@@ -24,7 +24,7 @@
             <div class="col-md-3 col-6 py-2">
                 <h5 class="text-center">Liens utiles</h5>
                 <div class="row">
-                    <p class="text-center"><a href="se-connecter.php">Espace adhérent</a></p>
+                    <p class="text-center"><a href="connexion_inscription.php">Espace adhérent</a></p>
                     <p class="text-center"><a href="donate.php">Faire un don</a></p>
                     <p class="text-center">FAQ</p>
                     <p class="text-center">Plan du site</p>
@@ -48,6 +48,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/index.js"></script>
+<script src="assets/js/<?php echo basename($_SERVER['PHP_SELF'], '.php') ?>.js"></script>
 </body>
 </html>

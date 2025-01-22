@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,7 +6,7 @@
     <title>Association Fatigue Chronique</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/<?php echo basename($_SERVER['PHP_SELF'], '.php') ?>.css">
+    <link rel="stylesheet" href="assets/css/<?php echo basename($_SERVER['PHP_SELF'], '.php') ?>.css">
 </head>
 <body>
 <!-- HEADER -->
@@ -26,21 +24,42 @@
                     <li class="nav-item"><a class="nav-link text-light text-center" href="#">Nos actions</a></li>
                     <li class="nav-item"><a class="nav-link text-light text-center" href="#">Contact</a></li>
                     <li><a href="donate.php" class="btn bg-light rounded-pill" id="btn-don">Faire un Don</a></li>
+                    <li>
+                        <form class="d-flex" id="searchBar">
+                            <input class="form-control" type="search" placeholder="Recherche" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">🔍</button>
+                        </form>
+                    </li>
+                    <li class="profile-container"><img src="assets/images/profil-icon.png" alt="Profile" class="profile-img">
+                        <ul class="profile-menu">
+                            <li><?php
+                                if(!session_id())
+                                    session_start();
+
+                                if(isset($_SESSION['id_users'])){
+                                    echo <<<HTML
+                            <form action="assets/php/logout.php" method="post">
+                                     <button type="submit" >Se Déconnecter</button>
+                                </form>
+                            HTML;
+                                } else {
+                                    echo <<<HTML
+                            <form action="connexion_inscription.php" method="post">
+                                     <button type="submit" >Se Connecter</button>
+                                </form>
+                        HTML;
+                                }
+                                ?></li>
+                            <li>Paramètres</li>
+                        </ul>
+                    </li>
                 </ul>
 
-                <form class="d-flex mb-3 mb-lg-0">
-                    <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">🔍</button>
-                </form>
             </div>
         </div>
     </nav>
 </header>
-
 <?php
-if(!session_id())
-    session_start();
-
 require_once '../private/app/flash.php';
 
 messageFlash();

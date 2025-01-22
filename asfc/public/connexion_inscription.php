@@ -58,11 +58,6 @@ require_once('../public/header.php');?>
                            required>
                 </div>
                 <div class="mb-3">
-                    <label for="signup-region" class="form-label">Région</label>
-                    <input type="text" class="form-control" id="signup-region" placeholder="Votre région"
-                           name="signup-region" required>
-                </div>
-                <div class="mb-3">
                     <label for="signup-email" class="form-label">Adresse Email</label>
                     <input type="email" class="form-control" id="signup-email" placeholder="Votre adresse email"
                            name="signup-email" required>
@@ -106,3 +101,7 @@ require_once('../public/header.php');?>
     })();
 </script>
 </body>
+
+<?php require_once('../public/footer.php'); ?>
+
+

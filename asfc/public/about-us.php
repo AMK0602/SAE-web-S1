@@ -1,4 +1,4 @@
-<?php require_once('../header.php'); ?>
+<?php require_once('../public/header.php'); ?>
 
 <!-- BANNER -->
     <section class="banner py-5">
@@ -31,9 +31,7 @@
         <div class="objectifs-container">
             <div class="card card-objectif">
                 <div class="card-header">
-                    <div class="curved-line">
-                        <span class="card-number">1</span>
-                    </div>
+                    <span class="card-number">1</span>
                     <h4 class="mx-3">Soutien et Orientation des Malades</h4>
                 </div>
                 <ul class="card-content">
@@ -44,9 +42,7 @@
             </div>
             <div class="card card-objectif">
                 <div class="card-header">
-                    <div class="curved-line">
-                        <span class="card-number">2</span>
-                    </div>
+                    <span class="card-number">2</span>
                     <h4 class="mx-3">Plaidoyer et Accompagnement Administratif</h4>
                 </div>
                 <ul class="card-content">
@@ -56,9 +52,7 @@
             </div>
             <div class="card card-objectif">
                 <div class="card-header">
-                    <div class="curved-line">
-                        <span class="card-number">3</span>
-                    </div>
+                    <span class="card-number">3</span>
                     <h4 class="mx-3">Collaboration et Accès à l'Information Médicale</h4>
                 </div>
                 <ul class="card-content">
@@ -74,6 +68,7 @@
         <p>PARLONS-EN ENSEMBLE !</p>
     </div>
 
+    <!--INFO SECTION-->
     <section class="info-section d-flex">
         <img src="assets/images/man.png" alt="MAN">
         <div class="infos">
@@ -102,55 +97,7 @@
         <h2>Conseil d'administration</h2>
         <div class="carousel-container">
             <div class="conseil-carousel">
-                <div class="slide">
-                    <div class="image-placeholder">Image</div>
-                    <div class="card-info">
-                        <p><strong>NOM</strong></p>
-                        <p>Président</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="image-placeholder">Image</div>
-                    <div class="card-info">
-                        <p><strong>NOM</strong></p>
-                        <p>Président</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="image-placeholder">Image</div>
-                    <div class="card-info">
-                        <p><strong>NOM</strong></p>
-                        <p>Président</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="image-placeholder">Image</div>
-                    <div class="card-info">
-                        <p><strong>NOM</strong></p>
-                        <p>Président</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="image-placeholder">Image</div>
-                    <div class="card-info">
-                        <p><strong>NOM</strong></p>
-                        <p>Président</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="image-placeholder">Image</div>
-                    <div class="card-info">
-                        <p><strong>NOM</strong></p>
-                        <p>Président</p>
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="image-placeholder">Image</div>
-                    <div class="card-info">
-                        <p><strong>NOM</strong></p>
-                        <p>Président</p>
-                    </div>
-                </div>
+                <!-- Généré par le JS -->
             </div>  
         </div>
         
@@ -159,4 +106,4 @@
     </div>
 
 
-<?php require_once('../footer.php') ?>
+<?php require_once('../public/footer.php') ?>
