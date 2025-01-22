@@ -9,7 +9,7 @@ class Authentification {
   /**
    * @throws \Exception
    */
-  public function register(string $prenom,string $nom,int $age,string $region,string $email, string $password, string $repeat) : bool {
+  public function register(string $prenom,string $nom,int $age,string $email, string $password, string $repeat) : bool {
     if($password !== $repeat) {
       throw new \Exception("Mots de passe différents");
     }
@@ -20,7 +20,7 @@ class Authentification {
       throw new \Exception("Utilisateur déjà enregistré");
     }
 
-    $user = new User($prenom,$nom,$age,$region,$email,$password);
+    $user = new User($prenom,$nom,$age,$email,$password);
 
     return $this->repository->saveUser($user);
   }
