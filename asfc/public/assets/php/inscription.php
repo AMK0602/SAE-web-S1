@@ -7,7 +7,7 @@ use Asfc\Sae\MariaDBRepository;
 if(!session_id())
     session_start();
 
-require_once '../vendor/autoload.php';
+require_once '../../../vendor/autoload.php';
 
 $bdd = new BddConnect();
 
@@ -18,8 +18,7 @@ $auth = new Authentification($trousseau);
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
-        // TODO autres attribue
-        $retour = $auth->register($_POST['signup-last'],$_POST['signup-first'],$_POST['signup-age'],$_POST['signup-region'],$_POST['signup-email'], $_POST['signup-pwd'], $_POST['signup-confirm']);
+        $retour = $auth->register($_POST['signup-last'],$_POST['signup-first'],$_POST['signup-age'],$_POST['signup-email'], $_POST['signup-pwd'], $_POST['signup-confirm']);
         $message = "Vous êtes enregistré. Vous pouvez vous authentifier";
         $code = "success";
     }
@@ -31,6 +30,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     $_SESSION['flash'][$code] = $message;
-    header("Location: connexion_inscription.php");
+    header("Location: ../../connexion_inscription.php");
 }
 

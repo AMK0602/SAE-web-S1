@@ -7,9 +7,7 @@ use Asfc\Sae\MariaDBRepository;
 if(!session_id())
     session_start();
 
-
-require_once 'header.php';
-require_once '../vendor/autoload.php';
+require_once '../../../vendor/autoload.php';
 
 $bdd = new BddConnect();
 
@@ -20,17 +18,17 @@ $auth = new Authentification($trousseau);
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
-        $retour = $auth->authenticate($_POST['signin-email'], $_POST['signin-pwd']);
-        $adherent= $trousseau->getUserRoleByEmail($_POST['signin-email'])==="adherent";
+        $email = $_POST['signin-email'];
+        $password = $_POST['signin-pwd'];
+        $retour = $auth->authenticate($email, $password);
+        $user = $trousseau->findUserByEmail($email);
         $_SESSION['flash']["success"] = "Authentification réussie";
-        if($adherent){
-            header("Location: index.php");
+        $_SESSION['id_users'] = $trousseau->findUserIDByEmail($email);
+        $_SESSION['role'] = $user->getRole();
+        $_SESSION['cotisation'] = $user->getCotisation();
+            header("Location: ../../index.php");
             exit();
 
-        } else {
-            header("Location: donate.php");
-            exit();
-        }
 
 
     }
@@ -43,7 +41,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $_SESSION['flash'][$code] = $message;
 
-    header("Location: connexion_inscription.php");
+    header("Location: ../../connexion_inscription.php");
 }
-
-require_once 'footer.php';
